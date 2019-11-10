@@ -21,7 +21,7 @@ separate-uncertainty,  % Unsicherheiten seperat angeben (mit ±)
 % Gestaltung
 %\usepackage{microtype}  % Mikrotypographie (kann man am Ende verwenden)
 \usepackage{booktabs}  % schönere Tabellen
-\usepackage[toc]{multitoc}  % mehrspaltiges Inhaltsverzeichnis
+%\usepackage[toc]{multitoc}  % mehrspaltiges Inhaltsverzeichnis
 \usepackage{csquotes}  % Anführungszeichen mit \enquote
 \usepackage{caption}  % Anpassung der Bildunterschriften, Tabellenüberschriften
 \usepackage{subcaption}  % Unterabbildungen, Untertabellen, …
@@ -234,23 +234,151 @@ Wenn man weiß, wie die Frequenzen im verwendeten Licht verteilt sind, kann dami
 \item Durch Beschuss mit einem Photon passender Energie wird das Neon zur stimulierten Emission gebracht. Es geht in einen energetisch tieferen Zustand über und erzeugt eine exakte Kopie des eingestrahlten Photons. Die Photonen laufen dabei zwischen zwei halbdurchlässigne Spiegeln, die einen optischen Resonator bilden. Durch das mehrmalige durchlaufen erhöht sich einerseits die Chance auf stimulierte Emission. Andererseits werden auch alle Photonen, die keine stehenden Wellen im Resonator bilden können, ausgelöscht.
 \item Das Neon geht durch spontane Emission in seinen Grundzustand zurück. Durch erneute Stoßanregung beginnt der Prozess von vorn. Sobald die durch Pumpen zugeführte Energie sämtliche Verluste (Streuung, Auskopplung am Ende des Lasers, ...) ausgleicht, ist die sogenannte \textbf{Laserschwelle} erreicht und es kommt zu einer lawinenartigen Verstärkung des Lichts.
 \end{itemize}
-In einem optischen Resonator der Länge \(L\) können sich nur stehende Wellen mit einer Wellenlänge beziehungsweise einer Frequenz von
-\[n\cdot\frac{\lambda}{2} = L  \quad\Longleftrightarrow\quad \nu = n\frac{c}{2L}\]
-ausbilden. Alle anderen Frequenzen werden durch destruktive Interferenz ausgelöscht. Es ergeben sich mehrere Frequenzen in äquidistanten Abständen, die man als \textbf{longitudinale Moden} bezeichnet:
+In einem optischen Resonator der Länge \(L\) können sich nur stehende Wellen mit einer Wellenlänge beziehungsweise einer Kreisfrequenz von
+\[n\cdot\frac{\lambda}{2} = L  \quad\Longleftrightarrow\quad \omega = n\frac{\pi\cdot c}{L}\]
+ausbilden. Alle anderen Frequenzen werden durch destruktive Interferenz ausgelöscht. Es ergeben sich mehrere Frequenzen in äquidistanten Abständen, die man als \textbf{longitudinale Moden} des Lasers bezeichnet:
 \begin{align}
-\Delta\nu = \frac{c}{2L}
+\Delta\omega = \frac{\pi\cdot c}{L}
 \end{align}
+Aus der Theorie der optischen Resonatoren (z.B. Fabry-Perot-Interferometer) weiß man, dass diese Linien abhängig vom Reflexionsvermögen der Spiegel mehr oder weniger schmale Lorentzkurven sind. Da der Reflexionsgrad beim Laser aber sehr hoch ist, sind diese Peaks so schmal im Vergleich zur Dopplerbreite, dass man sie durch Delta-Distributionen annähern kann. \\\\
 Das Laserspektrum setzt sich nun wie folgt zusammen: Der Laserübergang des Neonatoms im sichtbaren Bereich liegt bei \(\lambda = 632.8 \mathrm{nm}\). Diese Wellenlänge ist aufgrund mehrerer Störfaktoren nicht scharf definiert. Der dominante Effekt ist die Dopplerverbreiterung aufgrund der thermischen Bewegung der Gasatome. Dieser führt zu einer gaußförmigen spektralen Leistungsdichte mit
 \begin{align}
-S(\omega) = S_0\cdot\mathrm{exp}\left[-4\ln(2)\cdot\left(\frac{\omega - \Omega}{\Delta\Omega}\right)^2\right] \quad\quad \Omega = 2.97\cdot 10^{15}\mathrm{Hz} 
-\end{align} 
-Die Dopplerverbreiterung berechnet sich dabei gemäß (\(m\) ist die Masse des Neonatoms):
-\[\Delta\nu = \frac{2\nu}{c}\sqrt{\frac{2 k_{\mathrm{B}} T \ln(2)}{m}} = 1.31 \mathrm{GHz} \quad\text{für} \ T = 300 \ \mathrm{K}\]
-Von diesem relativ schmalen aber kontinuierlichen Spektrum werden durch die Wirkung des Resonators nur die diskreten Lasermoden in äquidistantem Abstand von \(a = \frac{c}{2L} = 320 \ \mathrm{MHz}\) durchgelassen. Aus der Theorie der optischen Resonatoren (z.B. Fabry-Perot-Interferometer) weiß man, dass diese Linien abhängig vom Reflexionsvermögen der Spiegel mehr oder weniger schmale Lorentzkurven sind. Da der Reflexionsgrad beim Laser aber sehr hoch ist, sind diese Peaks so schmal im Vergleich zur Dopplerbreite, dass man sie durch Delta-Distributionen annähern kann. Das Spektrum hat dann die endgültige Form
+S(\omega) = S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\omega-\Omega)^2}{\sigma^2}\right)
+\end{align}
+Dabei ist \(\Omega = 2\pi \frac{c}{\lambda} = 2.97\cdot 10^{15} \ \mathrm{Hz} \) die zentrale Kreisfrequenz und \(\sigma\) die Standartabweichung der Gaußkurve, die sich für die Dopplerverbreiterung gemäß
 \begin{align*}
-S_{\mathrm{res}}(\omega) =  S_0\cdot\mathrm{exp}\left[-4\ln(2)\cdot\left(\frac{\omega - \Omega}{\Delta\Omega}\right)^2\right] \cdot\sum_{n = 0}^{N-1} \delta(\omega - \Omega - n\cdot 2\pi a)
-\end{align*} 
-Daraus lassen sich nun die normierte Kohärenzfunktion \(\gamma(\tau)\) und der Interferenzkontrast \(K(\tau)\) berechnen. Man erhält:
+\sigma = \sqrt{\frac{k_{\mathrm{B}}T}{mc^2}} \cdot \Omega = 3.48 \ \mathrm{GHz} \quad\text{bei}\quad T=300 \ \mathrm{K}
+\end{align*}
+berechnet. Sie wird hier als Standartabweichung angegeben, es ist aber oft auch üblich sie als Halbwertsbreite \textbf{FWHM} zu nutzen. Die Umrechnung auf eine Halbwertsbreite ergäbe für die Gaußkurve
+\[\textbf{FWHM} = 2\sqrt{2\ln(2)}\sigma = 8.20 \ \mathrm{GHz}\]
+Von diesem relativ schmalen aber kontinuierlichen Spektrum werden durch die Wirkung des Resonators der Länge \(L=46.87 \ \mathrm{cm}\) nur die diskreten Lasermoden in äquidistantem Abstand von \(a = \frac{\pi\cdot c}{L} = 2.01 \ \mathrm{GHz}\) (hier auch als Kreisfrequenz angegeben!) durchgelassen. Allerdings sind nicht alle Moden auch beobachtbar. Neben dem Intensitätsgewinn durch stimulierte Emission kommt es im Resonator auch zu Verlusten durch Absorption, Streuung und die Auskopplung des Lichts am Ende des Lasers. Eine Lasermode kann daher nur beobachtet werden, wenn der Gewinn die Verluste mindestens ausgleicht. Diesen Effekt bezeichnet man als \textbf{Laserschwelle}. Er sorgt dafür, dass aus allen Moden unter der Gaußkurve nur einige aus dem inneren Bereich zum tatsächlichen Spektrum beitragen. Wenn wir die Kreisfrequenz der ersten beobachtbaren Mode mit \(\Omega_{\mathrm{min}}\) bezeichnen und der Laser insgesamt \(N\)-viele Moden hat, nimmt das Intensitätsspektrum die folgende Form an: 
+\begin{align}
+S_{\mathrm{res}}(\omega) =  S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\omega-\Omega)^2}{\sigma^2}\right) \cdot\sum_{n = 0}^{N-1} \delta\left[\omega - \left(\Omega_{\mathrm{min}} + n\cdot a\right)\right]
+\end{align}
+Durch die Wirkung der Delta-Distribution lassen sich die benötigten Integrale für die Kohärenzfunktion leicht auswerten:
+\begin{align*}
+\int_{0}^{\infty} S_{\mathrm{res}}(\omega) \ \mathrm{d}\omega &= S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right)   \\
+\int_{0}^{\infty} S_{\mathrm{res}}(\omega)\cdot\mathrm{e}^{-\mathrm{i}\omega\tau} \ \mathrm{d}\omega &= S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) \mathrm{exp}\left[-\mathrm{i}(\Omega_{\mathrm{min}} + n\cdot  a)\tau\right] \\
+&= S_0 \frac{1}{\sqrt{2\pi\sigma^2}} \cdot\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) \mathrm{e}^{-\mathrm{i}\cdot na\tau} \\
+\end{align*}
+Dabei lassen sich die Faktoren 
+\[\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) =: \alpha_n\]
+als Gewichtsfunktionen für jede einzelne Mode verstehen. Strukturell hat die normierte Selbstkohärenzfunktion des \(N\)-Modenlasers damit die Form:
+\begin{align}
+\gamma(\tau) = \mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau} \cdot \frac{\sum_{n=0}^{N-1}\alpha_n\mathrm{e}^{-\mathrm{i}\cdot na\tau}}{\sum_{n=0}^{N-1}\alpha_n}
+\end{align}
+Eine erste Näherung kann man dadurch erhalten, dass man jede Mode gleichstark gewichtet, d.h. indem man einfach alle \(\alpha_n = 1\) setzt. In diesem Fall lassen sich die Summen dann elementar ausführen:
+\begin{align*}
+\sum_{n=0}^{N-1}\alpha_n &= \sum_{n=0}^{N-1}1 = N \\
+\sum_{n=0}^{N-1}\alpha_n\mathrm{e}^{-2\pi\mathrm{i}\cdot na\tau} &= \sum_{n=0}^{N-1}\mathrm{e}^{-\mathrm{i}\cdot na\tau} \\
+&= \sum_{n=0}^{N-1}\left(\mathrm{e}^{-\mathrm{i}\cdot a\tau}\right)^{n} \quad\left| \ \text{geometrische Summe}\right. \\
+&= \frac{1-\mathrm{e}^{-\mathrm{i}\cdot Na\tau}}{1-\mathrm{e}^{-\mathrm{i}\cdot a\tau}} \\
+&= \frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau - 1}}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1} 
+\end{align*}
+\begin{align}
+\Longrightarrow\quad \gamma(\tau) = \frac{1}{N} \mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\cdot\frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau - 1}}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1}
+\end{align}
+Durch Bildung des komplexen Betrages gelangt man zum Interferenzkontrast:
+\begin{align*}
+K(\tau) &= |\gamma(\tau)| \\
+&= \frac{1}{N}\cdot\left|\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\right|\cdot\left|\frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau } - 1}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1}\right| \\
+&= \frac{1}{N} \frac{|\cos (Na\tau) - 1 - \mathrm{i}\sin(Na\tau)|}{|\cos (a\tau) - 1 - \mathrm{i}\sin(a\tau)|} \\
+&= \frac{1}{N} \sqrt{\frac{\left[\cos (Na\tau) - 1\right]^2 + \sin^2(Na\tau)}{\left[\cos (a\tau) - 1\right]^2 + \sin^2(a\tau)}} \\ 
+&= \frac{1}{N} \sqrt{\frac{\cos^2 (Na\tau) - 2\cos(Na\tau) + 1 + \sin^2(Na\tau)}{\cos^2 (a\tau) - 2\cos(a\tau) + 1 + \sin^2(a\tau)}} \\
+&= \frac{1}{N} \sqrt{\frac{1- \cos (Na\tau) }{1 -\cos (a\tau) }} \quad\left| \ \text{nutze} \ \sin\left(\frac{x}{2} = \sqrt{\frac{1-\cos(x)}{2}}\right)\right. \\
+\end{align*}
+\begin{align}
+\Longrightarrow\quad \underline{\underline{K(\tau) = \frac{1}{N} \left|\frac{\sin\left(\frac{1}{2}Na\tau\right) }{\sin\left(\frac{1}{2}Na\tau\right) }\right| }}
+\end{align}
+Der Kontrast hat Nullstellen bei \(\frac{1}{2}Na\tau = l\pi\) mit ganzen Zahlen \(l\). Die erste nichttriviale Nullstelle liegt demnach bei
+\[\tau_{\mathrm{C}} = \frac{2\pi}{Na}\]
+was man mit der Kohärenzzeit interpretieren kann. Die Kohärenzlänge eines Lasers mit \(N\)-vielen annähernd gleichintensiven Moden liegt also bei
+\begin{align}
+l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = \frac{2\pi c}{Na} 
+\end{align}
+Mit dem bereits berechneten Modenabstand ergeben sich dabei folgende Kohärenzlängen in Abhängigkeit von der Anzahl angeregter Lasermoden: \\\\
+\begin{table}[h!] \centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\(N\) & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+\(l_{\mathrm{C}} \mathrm{/} \mathrm{cm}\) & 93.8 & 46.9 & 31.3 & 23.4 & 18.8 & 15.6 & 13.4 & 11.7 & 10.4 & 9.4 \\\hline
+\end{tabular}
+\end{table} \\\\
+Die Kohärenzlänge liegt damit im Bereich von knapp einem Meter bis einigen Dezimetern, d.h. in der Größenordnung der Länge des Resonators. Das ist aber auch nicht weiter verwunderlich, denn für den Abstand der Moden gilt ja
+\[a = \frac{\pi\cdot c}{L}\]
+Damit kann man die Kohärenzlänge umschreiben zu
+\begin{align}
+l_{\mathrm{C}} = \frac{2\pi c}{Na} = \frac{2\pi c}{N}\cdot\frac{L}{\pi\cdot c} = \frac{2L}{N} 
+\end{align}
+Auf völlig analoge Weise lassen sich nun auch Kohärenzfunktion und Kontrast für einen Laser mit Moden von ungleicher Intensität berechnen; es müssen lediglich die Gewichte angepasst werden. Wir geben zur späteren Diskussion nur das Ergebnis für folgende Fälle an:
+\begin{itemize}
+\item Laser mit 3 Moden im Intensitätsverhältnis 1 : 1.4 : 1 (beste 3-Modennäherung). Durch die Setzung \(\alpha_0 = 1,\alpha_1 = 1.4, \alpha_2 = 1\) erhält man als Ergebnis
+\begin{align*}
+\gamma(\tau) &= \frac{5}{17}\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau} \left[1 + 1.4\mathrm{e}^{-\mathrm{i}a\tau} + \mathrm{e}^{-2\mathrm{i}a\tau}\right] \\
+K(\tau) &= \frac{5}{17}\cdot\sqrt{3.96 + 5.6\cos(a\tau) + 2\cos(2a\tau)}
+&= \frac{5}{17}\sqrt{4\cos^2(a\tau) + 5.6\cos(a\tau) + 1.96}
+\end{align*}
+Die Nullstellen des Kontrastes ergeben sich durch Lösen der quadratischen Gleichung:
+\begin{align*}
+K(\tau) &= \frac{5}{17}\sqrt{4\cos^2(a\tau) + 5.6\cos(a\tau) + 1.96} \overset{!}{=} 0 \\
+\Longrightarrow\quad  &\cos^2(a\tau) + 1.4\cos(a\tau) + 0.49 = 0 \\
+\Longrightarrow\quad \cos(a\tau) &= -0.7 \pm\sqrt{(-0.7)^2 - 0.49} \\
+\Longrightarrow\quad \cos(a\tau_{1,2}) &= -0.7 \quad\text{doppelte Nullstelle}
+\end{align*}
+Die Auflösung nach dem Argument der Cosinusfunktion ergibt dann zunächst:
+\[a\cdot\tau_{\mathrm{C}} = \arccos(-0.7) \approx 2.3461\]
+Mit der Resonatorlänge von \(L = 46.87 \ \mathrm{cm}\) hatten wir bereits vorher einen longitudinalen Modenabstand von \(a = \frac{\pi\cdot c}{L} = 2.01 \ \mathrm{GHz}\) ermittelt. Damit ergibt dann als Schlussresultat:
+\[\underline{\underline{\tau_{\mathrm{C}} = 1.167\cdot 10^{-9} \ \mathrm{s}}} \quad \quad \underline{\underline{l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = 35.0 \ \mathrm{cm}}}\]
+\item Laser mit 4 Moden im Intensitätsverhältnis 0.28 : 0.56 : 0.56 : 0.28 (beste 4-Modennäherung). Durch die Setzung \(\alpha_0 = 0.28,\alpha_1 = 0.56, \alpha_2 = 0.56, \alpha_3 = 0.28\) erhält man als Ergebnis
+\begin{align*}
+\gamma(\tau) &= \frac{25}{42}\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau} \left[0.28 + 0.56\mathrm{e}^{-\mathrm{i}a\tau} + 0.56\mathrm{e}^{-2\mathrm{i}a\tau} + 0.28 \mathrm{e}^{-3\mathrm{i}a\tau}\right] \\
+K(\tau) &= \frac{25}{42}\sqrt{\frac{49}{625}\cos(3a\tau) + \frac{196}{625}\cos(2a\tau) + \frac{784}{625}\cos(a\tau) + \frac{98}{625}} \\
+&= \frac{1}{6}\sqrt{\cos(3a\tau) + 4\cos(2a\tau) + 16\cos(a\tau) + 2} \\
+\end{align*}
+Zur Bestimmung der Kohärenzlänge ist diesmal die Gleichung
+\[K(\tau) = \frac{1}{6}\sqrt{\cos(3a\tau) + 4\cos(2a\tau) + 16\cos(a\tau) + 2}  \overset{!}{=} 0\]
+zu lösen, was wieder äquivalent dazu ist, dass die Wurzel null wird. Mithilfe der Identitäten
+\begin{align*}
+\cos(3x) &= \cos^3(x) - 3\sin^2(x)\cos(x) = \cos^3(x) - 3\left[1-\cos^2(x)\right]\cos(x) = 4\cos^3(x) - 3\cos(x) \\
+\cos(2x) &= \cos^2(x) - \sin^2(x) = \cos^2(x) - \left[1 -\cos^2(x)\right] = 2\cos^2(x) - 1
+\end{align*}
+überführt man den Ausdruck unter der Wurzel in eine kubische Gleichung, die nur noch Cosinusterme enthält:
+\begin{align*}
+4\cos^3(a\tau) + 8\cos^2(a\tau)  + 13\cos(a\tau) - 2 = 0
+\end{align*}
+Diese Gleichung kann jetzt wahlweise analytisch mit der Cardanischen Formel oder numerisch, etwa mit dem Newton'schen Verfahren, gelöst werden. Es ergeben sich eine reelle und zwei echt-komplexe Lösungen, von denen aber nur die reelle benötigt wird, da \(a\) und \(\tau\) nach Definition reell sind:
+\[\cos(a\tau_{\mathrm{C}}) \approx 0.1408\]
+Die Auflösung ergibt zunächst
+\[a\tau_{\mathrm{C}} = 1.4295\]
+und mit \(a= 2.01 \ \mathrm{GHz}\) völlig analog zum 3-Modenlaser folgendes Ergebnis:
+\[\underline{\underline{\tau_{\mathrm{C}} = 7.11\cdot 10^{-10} \ \mathrm{s} }} \quad\quad \underline{\underline{l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = 21.3 \ \mathrm{cm} }}\]
+\end{itemize}
+Die Anregung von vier statt nur drei Lasermoden führt also dazu, dass die Kohärenzlänge um immerhin etwa \(39.1 \%\) abnimmt. Ein guter Helium-Neon-Laser sollte demnach so gebaut sein, dass nur sehr wenige Moden beitragen. Das ließe sich über ein genügend schmales Gaußspektrum erreichen, jedoch lässt sich die Dopplerverbreiterung nicht beliebig weit unterdrücken. Der Ausweg besteht dann darin, die Laserschwelle möglichst nahe an 1 heranzubringen, damit nur ein sehr schmales Frequenzintervall aus der Mitte der Glocke beiträgt. Der Verlauf des Interferenzkontrastes ist in folgender Abbildung dargestellt:
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.4]{Kontrast_3_und_4_Moden.png}
+\caption{Der Interferenzkontrast \(K(\tau)\) für einen Helium-Neon-Laser mit drei beziehungsweise vier angeregten Lasermoden in jeweils bester Modennäherung.}
+\label{Kontrast_real}
+\end{figure} \\\\
+Zum Vergleich geben wir entsprechende Werte für Gasentladungslampen an: 
+\begin{itemize}
+\item Eine Hochdruck-Gasentladungslampe mit Quecksilber als Leuchtstoff arbeitet bei Temperaturen im Bereich \(T = 3200 \hdots 4200 \ \mathrm{K}\). Von den besonders intensiven Spektrallinien liegen fünf im UV-Bereich, zwei an der blauvioletten Grenze des sichtbaren Lichts und eine Doppellinie im orangen Bereich. Nur die letzte wäre für holographische Anwendungen sinnvoll, da sie deutlich sichtbar ist. Die Wellenlänge von \(\lambda = 597 \ \mathrm{nm}\) ist im Rahmen einer Modellrechnung mit der vom Helium-Neon-Laser vergleichbar. Für diese Linie erhält man folgende Kreisfrequenz und Standartabweichung durch Dopplerverbreiterung:
+\begin{align*}
+\Omega = \frac{2\pi c}{\lambda} = 3.26\cdot 10^{15} \ \mathrm{Hz} \quad\quad \sigma = \sqrt{\frac{k_{\mathrm{B}} T}{mc^2}} \Omega = 4.25 \ \mathrm{GHz} \quad\text{bei} \ T = 3700 \ \mathrm{K}
+\end{align*}
+Unter der Annahme einer gaußförmigen Verteilung erhält man dann folgende Kohärenzlänge:
+\begin{align*}
+\tau_{\mathrm{C}} = \frac{\sqrt{2}}{\sigma} = 3.33\cdot 10^{-10} \ \mathrm{s} \quad\Longrightarrow\quad\underline{\underline{l_{\mathrm{C}} = 10.0 \ \mathrm{cm}}}
+\end{align*}
+\item Natriumdampflampen in Niedrigdruckausführung arbeiten bei einer deutlich geringerer Temperatur von etwa \(T = 600 \ \mathrm{K}\). Markant ist hier besonders die \(D\)-Linie bei \(\lambda = 589 \ \mathrm{nm}\), die sich aufgrund der ähnlichen Größenordnung ebenfalls gut für eine Modellrechnung eignet. Hier erhält man für die Kreisfrequenz:
+\begin{align*}
+\Omega = \frac{2\pi c}{\lambda} = 3.20\cdot 10^{15} \ \mathrm{Hz} \quad\quad \sigma = \sqrt{\frac{k_{\mathrm{B}} T}{mc^2}} \Omega = 4.97 \ \mathrm{GHz} \quad\text{bei} \ T = 600 \ \mathrm{K}
+\end{align*}
+und für die Kohärenzlänge:
+\begin{align*}
+\tau_{\mathrm{C}} = \frac{\sqrt{2}}{\sigma} = 2.85\cdot 10^{-10} \ \mathrm{s} \quad\Longrightarrow\quad\underline{\underline{l_{\mathrm{C}} = 8.5 \ \mathrm{cm}}}
+\end{align*}
+\end{itemize}
+Beide Beispiele zeigen, dass die Kohärenzlänge von Gasentladungslampen kleiner ist als beim Laser, aber zumindest noch in einer ähnlichen Größenordnung. Der wesentliche Unterschied, der den Laser hier auszeichnet, ist vor allem die definierte Wellenlänge: Aufgrund der Dopplerverbreiterung erhält man bei den Gasentladungslampen eine Unschärfe in der Wellenlänge von ungefähr \(\Delta\lambda_{\mathrm{Hg}} = 0.44 \ \mathrm{nm}\) für Quecksilber beziehungsweise \(\Delta\lambda_{\mathrm{Na}} = 0.37 \ \mathrm{nm}\) für Natrium. Dieser Fehler von knapp \(7 \%\) sorgt dafür, dass die Spektrallinien nicht mehr scharf genug definiert sind um ein Hologramm anzufertigen. Beim Laser ist das Gaußpaket zwar ähnlich breit, aber aufgrund der filternden Wirkung des Resonators enthält das Paket kein Kontinuum an Wellenlängen sondern nur wohldefinierte Linien.
     % Bibliographie/Literaturverzeichnis
     \begin{thebibliography}{9}
     \bibitem{wiki:Intensität}
