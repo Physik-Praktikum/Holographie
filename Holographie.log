@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.21)  10 NOV 2019 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.21)  5 DEC 2019 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2280,237 +2280,253 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 139.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 139.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
-[4]
-<Frequenzspektrum.png, id=112, 1107.8991pt x 586.1097pt>
-File: Frequenzspektrum.png Graphic file (type png)
-<use Frequenzspektrum.png>
-Package pdftex.def Info: Frequenzspektrum.png  used on input line 152.
-(pdftex.def)             Requested size: 443.1518pt x 234.43971pt.
 
-Overfull \hbox (24.89624pt too wide) in paragraph at lines 152--154
- [][] 
- []
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 160.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 160.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 160.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 160.
-[5 <./Frequenzspektrum.png>]
-
-Package caption Warning: \label without proper reference on input line 153.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `Frequenzspqktrum' on page 6 undefined on input line 1
-65.
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 174.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 174.
-
-Overfull \hbox (30.0928pt too wide) detected at line 185
+Overfull \hbox (8.4615pt too wide) detected at line 145
 []
  []
 
 
-Overfull \hbox (10.88788pt too wide) in paragraph at lines 185--185
+Overfull \hbox (10.88788pt too wide) in paragraph at lines 145--145
 [] 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 185.
+(babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 185.
+(babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 185.
+(babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 185.
-[6]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 212.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 212.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 212.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 212.
- [7]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 225.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 225.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 232.
+(babel)             in language  on input line 145.
+[4]
+<Frequenzspektrum.png, id=122, 1107.8991pt x 586.1097pt>
+File: Frequenzspektrum.png Graphic file (type png)
+<use Frequenzspektrum.png>
+Package pdftex.def Info: Frequenzspektrum.png  used on input line 148.
+(pdftex.def)             Requested size: 443.1518pt x 234.43971pt.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+Overfull \hbox (24.89624pt too wide) in paragraph at lines 148--150
+ [][] 
+ []
+
+
+Package caption Warning: \label without proper reference on input line 149.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `Frequenzspqktrum' on page 5 undefined on input line 1
+61.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 162.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 162.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 162.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 162.
+[5 <./Frequenzspektrum.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 170.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 170.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 188.
+ [6]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 216.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 216.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 218.
+ [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 223.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 232.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 223.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
  [8]
-Overfull \hbox (0.35399pt too wide) in paragraph at lines 242--245
+Overfull \hbox (0.35399pt too wide) in paragraph at lines 233--236
 \T1/cmr/m/n/10.95 dass die-se Li-ni-en ab-hän-gig vom Re-fle-xi-ons-ver-mö-gen 
 der Spie-gel mehr oder we-ni-ger schma-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 253.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 253.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 253.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 253.
 [9]
-Overfull \hbox (28.06818pt too wide) detected at line 263
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 278--289
+
  []
 
 
-Overfull \hbox (10.88788pt too wide) in paragraph at lines 263--263
-[] 
+Underfull \hbox (badness 10000) in paragraph at lines 278--289
+
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 289.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 289.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 289.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 289.
 [10]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 294.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 294.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 294.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 294.
- [11]
-Underfull \hbox (badness 10000) in paragraph at lines 298--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--308
-
- []
-
-
-Overfull \hbox (15.3046pt too wide) detected at line 320
+Overfull \hbox (15.3046pt too wide) detected at line 294
 []
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 327.
+(babel)             in language  on input line 310.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 327.
+(babel)             in language  on input line 310.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 327.
+(babel)             in language  on input line 310.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 327.
-[12]
-Overfull \hbox (46.83269pt too wide) detected at line 344
+(babel)             in language  on input line 310.
+[11]
+Overfull \hbox (46.83269pt too wide) detected at line 317
 []
  []
 
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 350.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 350.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 350.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 350.
-[13]
-<Kontrast_3_und_4_Moden.png, id=177, 1107.8991pt x 586.1097pt>
+<Kontrast_3_und_4_Moden.png, id=176, 1107.8991pt x 586.1097pt>
 File: Kontrast_3_und_4_Moden.png Graphic file (type png)
 <use Kontrast_3_und_4_Moden.png>
-Package pdftex.def Info: Kontrast_3_und_4_Moden.png  used on input line 358.
+Package pdftex.def Info: Kontrast_3_und_4_Moden.png  used on input line 331.
 (pdftex.def)             Requested size: 443.1518pt x 234.43971pt.
 
-Overfull \hbox (24.89624pt too wide) in paragraph at lines 358--359
+Overfull \hbox (24.89624pt too wide) in paragraph at lines 331--332
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--364
+Underfull \hbox (badness 10000) in paragraph at lines 329--337
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 338.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 338.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 338.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 338.
+[12]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 346.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 346.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 346.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 346.
+ [13 <./Kontrast_3_und_4_Moden.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 356.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 356.
+
+Overfull \hbox (21.71512pt too wide) in paragraph at lines 357--360
+\T1/cmr/m/n/10.95 Die in die-sem Ver-such ver-wen-de-ten Ho-lo-gram-me sind so-
+ge-nann-te Volumen-Phasen-Reflexions-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 360.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 360.
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--373
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 365.
+(babel)             in language  on input line 373.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 365.
+(babel)             in language  on input line 373.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 365.
+(babel)             in language  on input line 373.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 365.
-[14 <./Kontrast_3_und_4_Moden.png>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 387.
+(babel)             in language  on input line 373.
+[14]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 377.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 1259) in paragraph at lines 385--389
+Underfull \hbox (badness 1259) in paragraph at lines 375--379
 []\T1/cmr/m/n/10.95 Wikipedia, \T1/cmr/m/it/10.95 In-ten-si-tät (Phy-sik)\T1/cm
 r/m/n/10.95 , []$\T1/cmtt/m/n/10.95 https : / / de . wikipedia . org / wiki / I
 ntensit % C3 %
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 382.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 389.
+(babel)             in language  on input line 382.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 389.
+(babel)             in language  on input line 382.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 389.
+(babel)             in language  on input line 382.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 389.
+(babel)             in language  on input line 382.
 [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 392.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 392.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 392.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 392.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 382.
  (./Holographie.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 382.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 382.
 Package rerunfilecheck Info: File `Holographie.out' has not changed.
-(rerunfilecheck)             Checksum: 0D792458134023DAE697E22ED8C64458;940.
+(rerunfilecheck)             Checksum: BED14A2B85220075FDDCDF7C50C7AC02;1077.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2521,13 +2537,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22870 strings out of 492982
- 427407 string characters out of 6134896
- 595187 words of memory out of 5000000
- 26160 multiletter control sequences out of 15000+600000
+ 22872 strings out of 492982
+ 427439 string characters out of 6134896
+ 594187 words of memory out of 5000000
+ 26162 multiletter control sequences out of 15000+600000
  550443 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,51p,10425b,901s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,51p,10425b,904s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -2547,10 +2563,10 @@ sr/share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/yfonts-t1/yfr
 ak.pfb>
-Output written on Holographie.pdf (16 pages, 526012 bytes).
+Output written on Holographie.pdf (15 pages, 527324 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
+ 287 PDF objects out of 1000 (max. 8388607)
+ 242 compressed objects within 3 object streams
  64 named destinations out of 1000 (max. 500000)
- 99 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

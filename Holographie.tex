@@ -141,11 +141,7 @@ Alle bisherigen Überlegungen wurden mit ebenen Wellen durchgeführt. Diese bild
 \[\hat{E}(\vec{r},t) = E_0 \mathrm{e}^{\mathrm{i}(\vec{k}\vec{r} - \Omega t)} \cdot\left[\Theta\left(t+\frac{T}{2}\right) - \Theta\left(t-\frac{T}{2}\right)\right]\]
 mit der Heaviside-Funktion \(\Theta\). Die Fouriertransformierte des Realteils von \(\hat{E}\) im Zeitbereich liefert dann das Frequenzspektrum von \(E\):
 \begin{align*}
-H(\omega) &= \int_{-\infty}^{\infty} \mathrm{e}^{\mathrm{i}\omega t}\textfrak{Re} \ \hat{E}(\vec{r},t) \ \mathrm{d} t \\
-&= \frac{E_0}{2} \int_{-\frac{T}{2}}^{\frac{T}{2}} \mathrm{e}^{\mathrm{i}\omega t}\left[\mathrm{e}^{\mathrm{i}(\vec{k}\vec{r} - \Omega t)} + \mathrm{e}^{-\mathrm{i}(\vec{k}\vec{r} - \Omega t)}\right] \ \mathrm{d} t \\
-&= \frac{E_0}{2} \left\lbrace \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}}\int_{-\frac{T}{2}}^{\frac{T}{2}} \mathrm{e}^{\mathrm{i}(\omega - \Omega) t} \ \mathrm{d} t + 
-\mathrm{e}^{-\mathrm{i}\vec{k}\vec{r}}\int_{-\frac{T}{2}}^{\frac{T}{2}} \mathrm{e}^{\mathrm{i}(\omega + \Omega) t} \ \mathrm{d} t\right\rbrace \\
-&= E_0 \left\lbrace   \frac{\sin\left[(\omega - \Omega)\frac{T}{2}\right]}{\omega - \Omega} \cdot \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}} +  \frac{\sin\left[(\omega + \Omega)\frac{T}{2}\right]}{\omega + \Omega} \cdot \mathrm{e}^{-\mathrm{i}\vec{k}\vec{r}}\right\rbrace
+H(\omega) = \int_{-\infty}^{\infty} \mathrm{e}^{\mathrm{i}\omega t}\textfrak{Re} \ \hat{E}(\vec{r},t) \ \mathrm{d} t = \hdots = E_0 \left\lbrace   \frac{\sin\left[(\omega - \Omega)\frac{T}{2}\right]}{\omega - \Omega} \cdot \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}} +  \frac{\sin\left[(\omega + \Omega)\frac{T}{2}\right]}{\omega + \Omega} \cdot \mathrm{e}^{-\mathrm{i}\vec{k}\vec{r}}\right\rbrace
 \end{align*}
 Für die spezielle Wahl \(\vec{r} = \vec{\mathrm{o}}\) ist das Frequenzspektrum in der folgenden Abbildung dargestellt:
 \begin{figure}[h!]\centering
@@ -158,7 +154,7 @@ Für Orte \(\vec{r}\neq \vec{\mathrm{o}}\) kommt es lediglich zu einer örtliche
 \begin{align}
 H(\omega) \approx E_0 \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}}\cdot \frac{\sin\left[(\omega - \Omega)\frac{T}{2}\right]}{\omega - \Omega}  
 \end{align}
-Die exakte Berechnung der spektralen Energiedichte ist mathematisch nicht ganz trivial, weil man streng genommen über ein genügend großes Ensemble zu mitteln hat. Abgesehen von numerischen Faktoren ergibt sich aber im wesentlichen folgender funktionaler Zusammenhang:
+Für die spektrale Energiedichte ergibt sich - abgesehen von numerischen Faktoren durch Ensemblemittelung - der gleiche funktionale Zusammenhang:
 \begin{align}
 S(\omega) \sim \frac{\sin^2\left[(\omega - \Omega)\frac{T}{2}\right]}{(\omega - \Omega)^2}  
 \end{align}
@@ -176,12 +172,7 @@ Bis jetzt wurde nur ein qualitatives Verständnis für die Bedeutung der Kohäre
 \[\hat{E}_{\mathrm{res}}(t) = \hat{E}(t) + \hat{E}(t+\tau)\]
 das sich aus zwei um die Zeit \(\tau\) verschobenen Signalen ergibt. Die Ortsabhängigkeit kann hier unterdrückt werden, weil die Wellen ja am selben Ort überlagert werden. Die Intensität der resultierenden Welle berechnet sich dann zu:
 \begin{align*}
-I_{\mathrm{res}}(\tau) &= \frac{1}{2}\varepsilon_0 c \left\langle \hat{E}_{\mathrm{res}}(t) \hat{E}_{\mathrm{res}}^{*}(t)\right\rangle \\
-&= \frac{1}{2}\varepsilon_0 c \left\langle \left[\hat{E}(t) + \hat{E}(t+\tau)\right] + \left[\hat{E}^{*}(t) + \hat{E}^{*}(t+\tau)\right]\right\rangle \\
-&= \frac{1}{2}\varepsilon_0 c \left\lbrace\left\langle \hat{E}(t)\hat{E}^{*}(t)\right\rangle + \left\langle\hat{E}(t)\hat{E}^{*}(t+\tau)\right\rangle + \left\langle\hat{E}(t+\tau)\hat{E}^{*}(t)\right\rangle + \left\langle\hat{E}(t+\tau)\hat{E}^{*}(t+\tau) \right\rangle \right\rbrace\\
-&= \frac{1}{2}\varepsilon_0 c \left\lbrace\left\langle \hat{E}(t)\hat{E}^{*}(t)\right\rangle + \left\langle\hat{E}^{*}(t)\hat{E}(t+\tau)\right\rangle^{*} + \left\langle\hat{E}(t+\tau)\hat{E}^{*}(t)\right\rangle + \left\langle\hat{E}(t+\tau)\hat{E}^{*}(t+\tau) \right\rangle \right\rbrace\\
-&= \frac{1}{2}\varepsilon_0 c \left\lbrace \frac{2}{c \varepsilon_0}I_1 + 2\cdot\textfrak{Re} \ \left\langle\hat{E}^{*}(t)\hat{E}(t+\tau)\right\rangle + \frac{2}{c \varepsilon_0}I_1\right\rbrace \\
-&= 2 I_1 + \varepsilon_0 c \ \textfrak{Re} \ \left\langle\hat{E}^{*}(t)\hat{E}(t+\tau)\right\rangle 
+I_{\mathrm{res}}(\tau) &= \frac{1}{2}\varepsilon_0 c \left\langle \hat{E}_{\mathrm{res}}(t) \hat{E}_{\mathrm{res}}^{*}(t)\right\rangle = \hdots =  2 I_1 + \varepsilon_0 c \ \textfrak{Re} \ \left\langle\hat{E}^{*}(t)\hat{E}(t+\tau)\right\rangle 
 \end{align*} 
 wobei wir verwendet haben, dass \(\langle \hat{E}(t)\hat{E}^{*}(t)\rangle = \langle\hat{E}(t+\tau)\hat{E}^{*}(t+\tau) \rangle = I_1\) die zeitgemittelte Intensität ist. Die hier noch auftretende Mittelwert wird als sogenannte \textbf{Selbstkohärenzfunktion} definiert:
 \begin{align}
@@ -214,11 +205,11 @@ Einsetzen in den Kontrast und vereinfachen ergibt für den Spezialfall von prakt
 \begin{align}
 K(\tau) = |\gamma(\tau)|
 \end{align}
-Damit ist die Kohärenzzeit \(\tau_{\mathrm{C}}\) präzise definierbar als die Zeitspanne, nach der der Kontrast auf einen bestimmten Wert abgefallen ist. Welchen Wert man hierfür nimmt, ist eine reine Frage der Zweckmäßigkeit. Zwei weit verbreitete Systeme definieren die Kohärenzzeit durch
+Damit ist die Kohärenzzeit \(\tau_{\mathrm{C}}\) präzise definierbar als die Zeitspanne, nach der der Kontrast auf einen bestimmten Wert abgefallen ist. Welchen Wert man hierfür nimmt, ist eine reine Frage der Zweckmäßigkeit. Falls \(K\) Nullstellen hat, verwendet man diese. Falls \(K\) jedoch asymptotisch gegen null geht, wie bei einem Gauß-Spektrum, gibt es zwei verbreitete Möglichkeiten eine charakteristische Breite zu definieren:
 \begin{align}
-\underline{\underline{K(\tau_{\mathrm{C}}) := \frac{1}{\mathrm{e}}}} \quad\quad\quad\text{oder} \quad\quad\quad K(\tau_{\mathrm{C}}) := \frac{1}{\sqrt{2}}
+K(\tau_{\mathrm{C}}) := \frac{1}{\mathrm{e}} \quad\quad\quad\text{oder} \quad\quad\quad K(\tau_{\mathrm{C}}) := \frac{1}{\sqrt{2}}
 \end{align}
-wobei wir in dieser Arbeit der unterstrichenen Konvention folgen. Die Kohärenzlänge kann dann wie üblich definiert werden als Länge, die das Licht während der Zeit \(\tau_{\mathrm{C}}\) zurücklegt:
+Die Kohärenzlänge kann dann wie üblich definiert werden als Länge, die das Licht während der Zeit \(\tau_{\mathrm{C}}\) zurücklegt:
 \begin{align}
 l_{\mathrm{C}} := c\cdot\tau_{\mathrm{C}}
 \end{align}
@@ -251,15 +242,14 @@ Dabei ist \(\Omega = 2\pi \frac{c}{\lambda} = 2.97\cdot 10^{15} \ \mathrm{Hz} \)
 \end{align*}
 berechnet. Sie wird hier als Standartabweichung angegeben, es ist aber oft auch üblich sie als Halbwertsbreite \textbf{FWHM} zu nutzen. Die Umrechnung auf eine Halbwertsbreite ergäbe für die Gaußkurve
 \[\textbf{FWHM} = 2\sqrt{2\ln(2)}\sigma = 8.20 \ \mathrm{GHz}\]
-Von diesem relativ schmalen aber kontinuierlichen Spektrum werden durch die Wirkung des Resonators der Länge \(L=46.87 \ \mathrm{cm}\) nur die diskreten Lasermoden in äquidistantem Abstand von \(a = \frac{\pi\cdot c}{L} = 2.01 \ \mathrm{GHz}\) (hier auch als Kreisfrequenz angegeben!) durchgelassen. Allerdings sind nicht alle Moden auch beobachtbar. Neben dem Intensitätsgewinn durch stimulierte Emission kommt es im Resonator auch zu Verlusten durch Absorption, Streuung und die Auskopplung des Lichts am Ende des Lasers. Eine Lasermode kann daher nur beobachtet werden, wenn der Gewinn die Verluste mindestens ausgleicht. Diesen Effekt bezeichnet man als \textbf{Laserschwelle}. Er sorgt dafür, dass aus allen Moden unter der Gaußkurve nur einige aus dem inneren Bereich zum tatsächlichen Spektrum beitragen. Wenn wir die Kreisfrequenz der ersten beobachtbaren Mode mit \(\Omega_{\mathrm{min}}\) bezeichnen und der Laser insgesamt \(N\)-viele Moden hat, nimmt das Intensitätsspektrum die folgende Form an: 
+Von diesem relativ schmalen aber kontinuierlichen Spektrum werden durch die Wirkung des Resonators der Länge \(L=46.87 \ \mathrm{cm}\) nur die diskreten Lasermoden in äquidistantem Abstand von \(a = \frac{\pi\cdot c}{L} = 2.01 \ \mathrm{GHz}\) (hier auch als Kreisfrequenz angegeben!) durchgelassen. Allerdings sind nur die Moden beobachtbar, die mindestens die Laserschwelle erreichen. Wenn wir die Kreisfrequenz der ersten beobachtbaren Mode mit \(\Omega_{\mathrm{min}}\) bezeichnen und der Laser insgesamt \(N\)-viele Moden hat, nimmt das Intensitätsspektrum die folgende Form an: 
 \begin{align}
 S_{\mathrm{res}}(\omega) =  S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\omega-\Omega)^2}{\sigma^2}\right) \cdot\sum_{n = 0}^{N-1} \delta\left[\omega - \left(\Omega_{\mathrm{min}} + n\cdot a\right)\right]
 \end{align}
 Durch die Wirkung der Delta-Distribution lassen sich die benötigten Integrale für die Kohärenzfunktion leicht auswerten:
 \begin{align*}
 \int_{0}^{\infty} S_{\mathrm{res}}(\omega) \ \mathrm{d}\omega &= S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right)   \\
-\int_{0}^{\infty} S_{\mathrm{res}}(\omega)\cdot\mathrm{e}^{-\mathrm{i}\omega\tau} \ \mathrm{d}\omega &= S_0 \frac{1}{\sqrt{2\pi\sigma^2}}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) \mathrm{exp}\left[-\mathrm{i}(\Omega_{\mathrm{min}} + n\cdot  a)\tau\right] \\
-&= S_0 \frac{1}{\sqrt{2\pi\sigma^2}} \cdot\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) \mathrm{e}^{-\mathrm{i}\cdot na\tau} \\
+\int_{0}^{\infty} S_{\mathrm{res}}(\omega)\cdot\mathrm{e}^{-\mathrm{i}\omega\tau} \ \mathrm{d}\omega &=  S_0 \frac{1}{\sqrt{2\pi\sigma^2}} \cdot\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\cdot\sum_{n = 0}^{N-1}\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) \mathrm{e}^{-\mathrm{i}\cdot na\tau} \\
 \end{align*}
 Dabei lassen sich die Faktoren 
 \[\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(\Omega_{\mathrm{min}} + n\cdot  a -\Omega)^2}{\sigma^2}\right) =: \alpha_n\]
@@ -269,32 +259,22 @@ als Gewichtsfunktionen für jede einzelne Mode verstehen. Strukturell hat die no
 \end{align}
 Eine erste Näherung kann man dadurch erhalten, dass man jede Mode gleichstark gewichtet, d.h. indem man einfach alle \(\alpha_n = 1\) setzt. In diesem Fall lassen sich die Summen dann elementar ausführen:
 \begin{align*}
-\sum_{n=0}^{N-1}\alpha_n &= \sum_{n=0}^{N-1}1 = N \\
-\sum_{n=0}^{N-1}\alpha_n\mathrm{e}^{-2\pi\mathrm{i}\cdot na\tau} &= \sum_{n=0}^{N-1}\mathrm{e}^{-\mathrm{i}\cdot na\tau} \\
-&= \sum_{n=0}^{N-1}\left(\mathrm{e}^{-\mathrm{i}\cdot a\tau}\right)^{n} \quad\left| \ \text{geometrische Summe}\right. \\
-&= \frac{1-\mathrm{e}^{-\mathrm{i}\cdot Na\tau}}{1-\mathrm{e}^{-\mathrm{i}\cdot a\tau}} \\
-&= \frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau - 1}}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1} 
+\sum_{n=0}^{N-1}\alpha_n = N \quad , \quad
+\sum_{n=0}^{N-1}\alpha_n\mathrm{e}^{-2\pi\mathrm{i}\cdot na\tau} = \frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau - 1}}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1} 
 \end{align*}
+wobei wir die geometrische Summenformel verwendet haben. Es folgt:
 \begin{align}
 \Longrightarrow\quad \gamma(\tau) = \frac{1}{N} \mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\cdot\frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau - 1}}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1}
 \end{align}
 Durch Bildung des komplexen Betrages gelangt man zum Interferenzkontrast:
 \begin{align*}
-K(\tau) &= |\gamma(\tau)| \\
-&= \frac{1}{N}\cdot\left|\mathrm{e}^{-\mathrm{i}\Omega_{\mathrm{min}}\tau}\right|\cdot\left|\frac{\mathrm{e}^{-\mathrm{i}\cdot Na\tau } - 1}{\mathrm{e}^{-\mathrm{i}\cdot a\tau} - 1}\right| \\
-&= \frac{1}{N} \frac{|\cos (Na\tau) - 1 - \mathrm{i}\sin(Na\tau)|}{|\cos (a\tau) - 1 - \mathrm{i}\sin(a\tau)|} \\
-&= \frac{1}{N} \sqrt{\frac{\left[\cos (Na\tau) - 1\right]^2 + \sin^2(Na\tau)}{\left[\cos (a\tau) - 1\right]^2 + \sin^2(a\tau)}} \\ 
-&= \frac{1}{N} \sqrt{\frac{\cos^2 (Na\tau) - 2\cos(Na\tau) + 1 + \sin^2(Na\tau)}{\cos^2 (a\tau) - 2\cos(a\tau) + 1 + \sin^2(a\tau)}} \\
-&= \frac{1}{N} \sqrt{\frac{1- \cos (Na\tau) }{1 -\cos (a\tau) }} \quad\left| \ \text{nutze} \ \sin\left(\frac{x}{2} = \sqrt{\frac{1-\cos(x)}{2}}\right)\right. \\
+K(\tau) = |\gamma(\tau)| = \hdots = \frac{1}{N} \left|\frac{\sin\left(\frac{1}{2}Na\tau\right) }{\sin\left(\frac{1}{2}a\tau\right) }\right|
 \end{align*}
-\begin{align}
-\Longrightarrow\quad \underline{\underline{K(\tau) = \frac{1}{N} \left|\frac{\sin\left(\frac{1}{2}Na\tau\right) }{\sin\left(\frac{1}{2}a\tau\right) }\right| }}
-\end{align}
 Der Kontrast hat Nullstellen bei \(\frac{1}{2}Na\tau = l\pi\) mit ganzen Zahlen \(l\). Die erste nichttriviale Nullstelle liegt demnach bei
 \[\tau_{\mathrm{C}} = \frac{2\pi}{Na}\]
 was man mit der Kohärenzzeit interpretieren kann. Die Kohärenzlänge eines Lasers mit \(N\)-vielen annähernd gleichintensiven Moden liegt also bei
 \begin{align}
-l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = \frac{2\pi c}{Na} 
+l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = \frac{2\pi c}{Na} = \frac{2L}{N} \quad , \text{weil} a = \frac{\pi\cdot c}{L} 
 \end{align}
 Mit dem bereits berechneten Modenabstand ergeben sich dabei folgende Kohärenzlängen in Abhängigkeit von der Anzahl angeregter Lasermoden: \\\\
 \begin{table}[h!] \centering
@@ -304,13 +284,7 @@ Mit dem bereits berechneten Modenabstand ergeben sich dabei folgende Kohärenzl�
 \(l_{\mathrm{C}} \mathrm{/} \mathrm{cm}\) & 93.8 & 46.9 & 31.3 & 23.4 & 18.8 & 15.6 & 13.4 & 11.7 & 10.4 & 9.4 \\\hline
 \end{tabular}
 \end{table} \\\\
-Die Kohärenzlänge liegt damit im Bereich von knapp einem Meter bis einigen Dezimetern, d.h. in der Größenordnung der Länge des Resonators. Das ist aber auch nicht weiter verwunderlich, denn für den Abstand der Moden gilt ja
-\[a = \frac{\pi\cdot c}{L}\]
-Damit kann man die Kohärenzlänge umschreiben zu
-\begin{align}
-l_{\mathrm{C}} = \frac{2\pi c}{Na} = \frac{2\pi c}{N}\cdot\frac{L}{\pi\cdot c} = \frac{2L}{N} 
-\end{align}
-Auf völlig analoge Weise lassen sich nun auch Kohärenzfunktion und Kontrast für einen Laser mit Moden von ungleicher Intensität berechnen; es müssen lediglich die Gewichte angepasst werden. Wir geben zur späteren Diskussion nur das Ergebnis für folgende Fälle an:
+Die Kohärenzlänge liegt damit im Bereich von knapp einem Meter bis einigen Dezimetern, d.h. in der Größenordnung der Länge des Resonators. Auf völlig analoge Weise lassen sich nun auch Kohärenzfunktion und Kontrast für einen Laser mit Moden von ungleicher Intensität berechnen; es müssen lediglich die Gewichte angepasst werden. Wir geben zur späteren Diskussion das Ergebnis für folgende Fälle an:
 \begin{itemize}
 \item Laser mit 3 Moden im Intensitätsverhältnis 1 : 1.4 : 1 (beste 3-Modennäherung). Durch die Setzung \(\alpha_0 = 1,\alpha_1 = 1.4, \alpha_2 = 1\) erhält man als Ergebnis
 \begin{align*}
@@ -322,7 +296,6 @@ Die Nullstellen des Kontrastes ergeben sich durch Lösen der quadratischen Gleic
 \begin{align*}
 K(\tau) &= \frac{5}{17}\sqrt{4\cos^2(a\tau) + 5.6\cos(a\tau) + 1.96} \overset{!}{=} 0 \\
 \Longrightarrow\quad  &\cos^2(a\tau) + 1.4\cos(a\tau) + 0.49 = 0 \\
-\Longrightarrow\quad \cos(a\tau) &= -0.7 \pm\sqrt{(-0.7)^2 - 0.49} \\
 \Longrightarrow\quad \cos(a\tau_{1,2}) &= -0.7 \quad\text{doppelte Nullstelle}
 \end{align*}
 Die Auflösung nach dem Argument der Cosinusfunktion ergibt dann zunächst:
@@ -384,7 +357,18 @@ Beide Beispiele zeigen, dass die Kohärenzlänge von Gasentladungslampen kleiner
 Die in diesem Versuch verwendeten Hologramme sind sogenannte Volumen-Phasen-Reflexions-Hologramme. Bei diesen wird das Interferenzmuster dreidimensional mit Hilfe einer dicken photographischen Schicht aufgezeichnet. Dies geschieht dann in Form eines Brechungsindexmusters. 
 \newline
 Bei der Rekonstruktion fällt dann die Referenzwelle von der Betrachterseite aus auf das Hologramm. Diese Reproduktion kann durch die Beugung der eingestrahlten Welle an einer dreidimensionalen Struktur beschrieben werden. Es muss allerdings berücksichtigt werden, dass die Referenzwelle eine Phasenverschiebung erfährt, die proportional zum lokalen Brechungsindex ist.
-
+\section{Durchführung}
+Nach einer einführenden Sicherheitsbelehrung zum Verhalten im Laser-Labor wurde zuerst das Michelson-Interferometer justiert. Dabei wird jedes Mal, wenn ein neues optisches Gerät eingebaut wurde, der Strahlengang des Lasers kontrolliert. Aufgrund der aktuellen Gegebenheiten im Labor konnte die Apparatur nicht nach den Abmessungen laut Praktikumsanleitung aufgebaut werden. In der folgenden Abbildung ist der schematische Aufbau sowie die von uns verwendeten Abmessungen dargestellt: \\\\
+% Hier kommt ein Bild vom Michelson-Interferometer rein.
+Nach dem Aufbau erfolgte die Feinjustage um ein möglichst deutliches und gleichmäßig ausgeleuchtets Interferenzmuster zu erhalten. Der oben dargestellte Interferometer-Arm von \(10 \ \mathrm{cm}\) Länge blieb während des gesamten ersten Teils fest justiert. Die Länge des anderen Arms wurde schrittweise erhöht und dabei das Interferenzmuster beobachtet. Der Kontrast änderte sich dabei deutlich und wurde rein visuell abgeschätzt. Dazu stand eine Übersicht zur Verfügung, in der das Interferenzbild zu verschiedenen Kontrasten vom Computer berechnet wurde. Wir haben dafür die folgenden Werte ermittelt: \\\\
+\begin{table}\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\hline
+\(l / \mathrm{cm}\) & & & & & & & & &  \\\hline
+\(K\) & & & & & & & & & \\\hline
+\end{tabular}
+\end{table}
+Die Messwerte sind tatsächlich nur eine recht grobe Näherung. Als Unsicherheiten muss man etwa \(\Delta l \approx 0.1 \ \mathrm{cm}\) und \(\Delta K \approx 0.1\) annehmen. Ein genaueres Ergebnis erhält man, indem man das Interferenzmuster digital aufzeichnet und dann von einem geeigneten Programm die hellen und dunklen Pixel zählen lässt. Daraus ergäben sich dann minimale und maximale Intensitäten und somit der Kontrast. \\\\
+Ziel dieses ersten Teilversuches war die Bestimmung der Modenzahl des Lasers sowie der Kohärenzlänge - ein entscheidender Schritt für ein gutes Hologramm. Da das Laserspektrum - wie die Vorbetrachtung gezeigt hat - sehr sensitiv von der Anzahl der Lasermoden abhängt, genügt die einfache qualitative Untersuchung des Verlaufes der Kontrastfunktion um die Modenzahl zu bestimmen.
     % Bibliographie/Literaturverzeichnis
     \begin{thebibliography}{9}
     \bibitem{wiki:Intensität}
