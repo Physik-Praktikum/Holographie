@@ -17,6 +17,7 @@ separate-uncertainty,  % Unsicherheiten seperat angeben (mit ±)
 \usepackage{yfonts}  % Frakturschrift für Real- und Imaginärteil komplexer Größen
 
 \usepackage{graphicx}  % Bilder einbinden \includegraphics{Pfad/zur/Datei(ohne Dateiendung)}
+\usepackage{svg}
 
 % Gestaltung
 %\usepackage{microtype}  % Mikrotypographie (kann man am Ende verwenden)
@@ -44,9 +45,9 @@ separate-uncertainty,  % Unsicherheiten seperat angeben (mit ±)
 \newcommand*{\titel}{Holographie}
 \newcommand*{\autor}{Tom Drechsler, Konstantin Schmid}
 \newcommand*{\abk}{HO}
-\newcommand*{\betreuer}{Karla Roszeitis}
-\newcommand*{\messung}{14.11.2019}
-\newcommand*{\ort}{<Ort>}
+\newcommand*{\betreuer}{Kevin Krechan}
+\newcommand*{\messung}{28.11.2019}
+\newcommand*{\ort}{KRO/S05}
 
 \hypersetup{pdfauthor={\autor}, pdftitle={\titel}}  % PDF-Metadaten setzen
 
@@ -80,8 +81,12 @@ Klassische Fotografie hat den Nachteil, dass bloß die Intensitätsverteilung re
 \begin{align}
 \label{ÜberlagerungWelle} \vec{E}=\sum_{i}\vec{a}_i \cos(\vec{k} \vec{r} - \omega t - \varphi_i)
 \end{align}
-In der Holographie wird das Lichtfeld des Objektes mit einer Referenzwelle überlagert und bei der Rekonstruktion des Lichtmusters wird das Hologramm wieder mit dieser Referenzwelle beleuchtet, sodass die rekonstruierte Welle in Phase und Amplitude der Originalwelle entspricht.
-
+In der Holographie wird das Lichtfeld des Objektes mit einer Referenzwelle überlagert und bei der Rekonstruktion des Lichtmusters wird das Hologramm wieder mit dieser Referenzwelle beleuchtet, sodass die rekonstruierte Welle in Phase und Amplitude der Originalwelle entspricht. Dies ist in folgender Abbildung dargestellt:
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.3]{rekonstruktion.png}
+\caption{Schema der Rekonstruktion des Hologramms}
+\end{figure}
+\newpage
 \subsection{Mathematische Grundlagen und Definitionen}
 \subsubsection{Intensität elektromagnetischer Wellen}
 Die tatsächliche Intensität elektromagnetischer Strahlung ist ein Maß für die Energie pro Fläche und Zeitintervall. Im Allgemeinen wird die tatsächliche Intensität $I_{\mathrm{t}}$ mit Hilfe des Poynting-Vektors $\vec{S}$ über die Gleichung (\ref{Poynting}) bestimmt.
@@ -128,11 +133,22 @@ Als Ansatz betrachten wir zwei sich überlagernde ebene harmonische Wellen, gege
 \begin{align}
 \label{Welle} \hat{E_i}=a_i e^{\mathrm{i}(\vec{k}_i \vec{r} - \omega t - \varphi_i)}, i=1,2
 \end{align}
+Diese Überlagerung kann mit Hilfe der Wellenvektoren so graphisch durch Vektoraddition dargestellt werden:
+\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.4]{interferenz.png}
+\caption{Interferenz zweier Wellen über Vektoraddition der Wellenvektoren}
+\end{figure}
+\\
 Im Folgenden bezeichnet $\hat{E}_{tot}$ die Superposition der beiden einzelnen Amplituden.
 Die totale mittlere Intensität der beiden Wellen ist dann:
 \begin{align}
 \label{Intensität4} I_{\mathrm{tot}}(\vec{r})=\frac{1}{2} \varepsilon_0 c \langle \hat{E}_{\mathrm{tot}} \hat{E}_{\mathrm{tot}}^* \rangle = 
-I_1 + I_2 + 2\sqrt{I_1 I_2}\cdot \cos(\phi(\vec{r})) \,\,\text{mit}\,\, \phi(\vec{r}) = (\vec{k}_1 - \vec{k}_2) \vec{r} - (\varphi_1 - \varphi_2)
+I_1 + I_2 + 2\sqrt{I_1 I_2}\cdot \cos(\phi(\vec{r}))
+\end{align}
+Die Funktion $\phi(\vec{r})$ ist dabei definiert als:
+\begin{align}
+ \phi(\vec{r}) = (\vec{k}_1 - \vec{k}_2) \vec{r} - (\varphi_1 - \varphi_2)
 \end{align}
 
 \subsection{Kohärenz und Kontrastfunktion}
@@ -144,12 +160,12 @@ mit der Heaviside-Funktion \(\Theta\). Die Fouriertransformierte des Realteils v
 H(\omega) = \int_{-\infty}^{\infty} \mathrm{e}^{\mathrm{i}\omega t}\textfrak{Re} \ \hat{E}(\vec{r},t) \ \mathrm{d} t = \hdots = E_0 \left\lbrace   \frac{\sin\left[(\omega - \Omega)\frac{T}{2}\right]}{\omega - \Omega} \cdot \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}} +  \frac{\sin\left[(\omega + \Omega)\frac{T}{2}\right]}{\omega + \Omega} \cdot \mathrm{e}^{-\mathrm{i}\vec{k}\vec{r}}\right\rbrace
 \end{align*}
 Für die spezielle Wahl \(\vec{r} = \vec{\mathrm{o}}\) ist das Frequenzspektrum in der folgenden Abbildung dargestellt:
+\newpage
 \begin{figure}[h!]\centering
 \includegraphics[scale=0.4]{Frequenzspektrum.png}
 \label{Frequenzspqktrum}
 \caption{Frequenzspektrum \(H(\omega)\) bei \(\vec{r} = \vec{\mathrm{o}}\), in willkürlichen Einheiten}
 \end{figure}
-
 Für Orte \(\vec{r}\neq \vec{\mathrm{o}}\) kommt es lediglich zu einer örtlichen Oszillation, die wir im folgenden nicht weiter betrachten. Auffällig ist, dass das Spektrum \(H(\omega)\) für große \(\omega\) im wesentlichen vom ersten Summanden bestimmt wird, weil die Funktion \(\frac{\sin(x)}{x}\) ein sehr ausgeprägtes Maximum hat und dann rasch abfällt. Da \(H\) ohnehin nur für positive \(\Omega\) benötigt wird, kann man in sehr guter Näherung schreiben:
 \begin{align}
 H(\omega) \approx E_0 \mathrm{e}^{\mathrm{i}\vec{k}\vec{r}}\cdot \frac{\sin\left[(\omega - \Omega)\frac{T}{2}\right]}{\omega - \Omega}  
@@ -158,7 +174,7 @@ Für die spektrale Energiedichte ergibt sich - abgesehen von numerischen Faktore
 \begin{align}
 S(\omega) \sim \frac{\sin^2\left[(\omega - \Omega)\frac{T}{2}\right]}{(\omega - \Omega)^2}  
 \end{align}
-Man kann sich anhand von \ref{Frequenzspqktrum} leicht klar machen, dass \(S\) einen scharfen Peak bei \(\omega=\Omega\) hat. Die nächsten beiden Nullstellen sind dann offenbar die Nullstellen der Sinusfunktion im Zähler, die bei \(\omega = \Omega \pm \frac{2\pi}{T}\) liegen. Der Peak hat demnach eine charakteristische \textbf{Frequenzbreite} von
+Man kann sich leicht klar machen, dass \(S\) einen scharfen Peak bei \(\omega=\Omega\) hat. Die nächsten beiden Nullstellen sind dann offenbar die Nullstellen der Sinusfunktion im Zähler, die bei \(\omega = \Omega \pm \frac{2\pi}{T}\) liegen. Der Peak hat demnach eine charakteristische \textbf{Frequenzbreite} von
 \begin{align}
 \Delta \omega = \frac{2\pi}{T}  
 \end{align}
@@ -166,7 +182,7 @@ Im Gegensatz zur ebenen Welle hat ein endlicher Wellenzug also stets ein Frequen
 \begin{align}
 l_{\mathrm{C}} := c\cdot T = \frac{2\pi c}{\Delta\omega} = \frac{c}{\Delta\nu} 
 \end{align}
-Je kleiner die Frequenzbreite d.h. je schärfer der Peak, desto größer die Kohärenzlänge und umgekehrt. Die ebene Welle hat definitionsgemäß eine unendliche Kohärenzlänge, weil \(l_{\mathrm{C}}\) für \(\Delta\omega\) divergiert. 
+Je kleiner die Frequenzbreite d.h. je schärfer der Peak, desto größer die Kohärenzlänge und umgekehrt. Die ebene Welle hat definitionsgemäß eine unendliche Kohärenzlänge, weil \(l_{\mathrm{C}}\) für \(\Delta\omega = 0\) divergiert. 
 \subsubsection{Präzise Definition der Kohärenzlänge, Kontrastfunktion}
 Bis jetzt wurde nur ein qualitatives Verständnis für die Bedeutung der Kohärenz gegeben. Für die Rechnung am Laser benötigt man aber eine leistungsfähigere Definition der Kohärenzlänge. Dazu überlegt man sich folgendes: In Interferenzexperimenten, für die die Kohärenz ja das wesentliche Kriterium ist, führt man stets zwei Lichtstrahlen mit unterschiedlichen Laufwegen und dementsprechend verschiedenen Laufzeiten zusammen. Betrachten wir also ein resultierendes komplexes Feld
 \[\hat{E}_{\mathrm{res}}(t) = \hat{E}(t) + \hat{E}(t+\tau)\]
@@ -274,7 +290,7 @@ Der Kontrast hat Nullstellen bei \(\frac{1}{2}Na\tau = l\pi\) mit ganzen Zahlen 
 \[\tau_{\mathrm{C}} = \frac{2\pi}{Na}\]
 was man mit der Kohärenzzeit interpretieren kann. Die Kohärenzlänge eines Lasers mit \(N\)-vielen annähernd gleichintensiven Moden liegt also bei
 \begin{align}
-l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = \frac{2\pi c}{Na} = \frac{2L}{N} \quad , \text{weil} a = \frac{\pi\cdot c}{L} 
+l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = \frac{2\pi c}{Na} = \frac{2L}{N} \quad , \text{weil} \  a = \frac{\pi\cdot c}{L} 
 \end{align}
 Mit dem bereits berechneten Modenabstand ergeben sich dabei folgende Kohärenzlängen in Abhängigkeit von der Anzahl angeregter Lasermoden: \\\\
 \begin{table}[h!] \centering
@@ -327,11 +343,12 @@ und mit \(a= 2.01 \ \mathrm{GHz}\) völlig analog zum 3-Modenlaser folgendes Erg
 \[\underline{\underline{\tau_{\mathrm{C}} = 7.11\cdot 10^{-10} \ \mathrm{s} }} \quad\quad \underline{\underline{l_{\mathrm{C}} = c\cdot\tau_{\mathrm{C}} = 21.3 \ \mathrm{cm} }}\]
 \end{itemize}
 Die Anregung von vier statt nur drei Lasermoden führt also dazu, dass die Kohärenzlänge um immerhin etwa \(39.1 \%\) abnimmt. Ein guter Helium-Neon-Laser sollte demnach so gebaut sein, dass nur sehr wenige Moden beitragen. Das ließe sich über ein genügend schmales Gaußspektrum erreichen, jedoch lässt sich die Dopplerverbreiterung nicht beliebig weit unterdrücken. Der Ausweg besteht dann darin, die Laserschwelle möglichst nahe an 1 heranzubringen, damit nur ein sehr schmales Frequenzintervall aus der Mitte der Glocke beiträgt. Der Verlauf des Interferenzkontrastes ist in folgender Abbildung dargestellt:
+\newpage
 \begin{figure}[h!]\centering
 \includegraphics[scale=0.4]{Kontrast_3_und_4_Moden.png}
 \caption{Der Interferenzkontrast \(K(\tau)\) für einen Helium-Neon-Laser mit drei beziehungsweise vier angeregten Lasermoden in jeweils bester Modennäherung.}
 \label{Kontrast_real}
-\end{figure} \\\\
+\end{figure}
 Zum Vergleich geben wir entsprechende Werte für Gasentladungslampen an: 
 \begin{itemize}
 \item Eine Hochdruck-Gasentladungslampe mit Quecksilber als Leuchtstoff arbeitet bei Temperaturen im Bereich \(T = 3200 \hdots 4200 \ \mathrm{K}\). Von den besonders intensiven Spektrallinien liegen fünf im UV-Bereich, zwei an der blauvioletten Grenze des sichtbaren Lichts und eine Doppellinie im orangen Bereich. Nur die letzte wäre für holographische Anwendungen sinnvoll, da sie deutlich sichtbar ist. Die Wellenlänge von \(\lambda = 597 \ \mathrm{nm}\) ist im Rahmen einer Modellrechnung mit der vom Helium-Neon-Laser vergleichbar. Für diese Linie erhält man folgende Kreisfrequenz und Standartabweichung durch Dopplerverbreiterung:
@@ -357,18 +374,96 @@ Beide Beispiele zeigen, dass die Kohärenzlänge von Gasentladungslampen kleiner
 Die in diesem Versuch verwendeten Hologramme sind sogenannte Volumen-Phasen-Reflexions-Hologramme. Bei diesen wird das Interferenzmuster dreidimensional mit Hilfe einer dicken photographischen Schicht aufgezeichnet. Dies geschieht dann in Form eines Brechungsindexmusters. 
 \newline
 Bei der Rekonstruktion fällt dann die Referenzwelle von der Betrachterseite aus auf das Hologramm. Diese Reproduktion kann durch die Beugung der eingestrahlten Welle an einer dreidimensionalen Struktur beschrieben werden. Es muss allerdings berücksichtigt werden, dass die Referenzwelle eine Phasenverschiebung erfährt, die proportional zum lokalen Brechungsindex ist.
-\section{Durchführung}
-Nach einer einführenden Sicherheitsbelehrung zum Verhalten im Laser-Labor wurde zuerst das Michelson-Interferometer justiert. Dabei wird jedes Mal, wenn ein neues optisches Gerät eingebaut wurde, der Strahlengang des Lasers kontrolliert. Aufgrund der aktuellen Gegebenheiten im Labor konnte die Apparatur nicht nach den Abmessungen laut Praktikumsanleitung aufgebaut werden. In der folgenden Abbildung ist der schematische Aufbau sowie die von uns verwendeten Abmessungen dargestellt: \\\\
-% Hier kommt ein Bild vom Michelson-Interferometer rein.
-Nach dem Aufbau erfolgte die Feinjustage um ein möglichst deutliches und gleichmäßig ausgeleuchtets Interferenzmuster zu erhalten. Der oben dargestellte Interferometer-Arm von \(10 \ \mathrm{cm}\) Länge blieb während des gesamten ersten Teils fest justiert. Die Länge des anderen Arms wurde schrittweise erhöht und dabei das Interferenzmuster beobachtet. Der Kontrast änderte sich dabei deutlich und wurde rein visuell abgeschätzt. Dazu stand eine Übersicht zur Verfügung, in der das Interferenzbild zu verschiedenen Kontrasten vom Computer berechnet wurde. Wir haben dafür die folgenden Werte ermittelt: \\\\
-\begin{table}\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\hline
-\(l / \mathrm{cm}\) & & & & & & & & &  \\\hline
-\(K\) & & & & & & & & & \\\hline
+
+\section{Durchführung und Messergebnisse}
+Nach einer einführenden Sicherheitsbelehrung zum Verhalten im Laser-Labor wurde zuerst das Michelson-Interferometer justiert. Dabei wird jedes Mal, wenn ein neues optisches Gerät eingebaut wurde, der Strahlengang des Lasers kontrolliert. Aufgrund der aktuellen Gegebenheiten im Labor konnte die Apparatur nicht nach den Abmessungen laut Praktikumsanleitung aufgebaut werden. In der folgenden Abbildung ist der schematische Aufbau sowie die von uns verwendeten Abmessungen dargestellt:
+\\\\
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{a2.png}
+\caption{Schematischer Aufbau Michelson-Interferomter}
+\end{figure}
+\\\\
+Nach dem Aufbau erfolgte die Feinjustage um ein möglichst deutliches und gleichmäßig ausgeleuchtetes Interferenzmuster zu erhalten. Der oben dargestellte Interferometer-Arm von \(10 \ \mathrm{cm}\) Länge blieb während des gesamten ersten Teils fest justiert. Die Länge des anderen Arms, hier bezeichnet als $l$, wurde schrittweise erhöht und dabei das Interferenzmuster beobachtet. Der Kontrast änderte sich dabei deutlich und wurde rein visuell abgeschätzt. Dazu stand eine Übersicht zur Verfügung, in der das Interferenzbild zu verschiedenen Kontrasten vom Computer berechnet wurde. Wir haben dafür die folgenden Werte ermittelt: 
+
+
+\begin{table}[h!]\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\hline
+\(l / \mathrm{cm}\) & 8.0 &10.8 &13.5 &16.3 &19.0 &21.1 &23.9 &26.8 &29.3 &31.7 \\\hline
+\(K\)  & 0.9 &0.8 &0.7 &0.5 &0.5 &0.4 &0.2 &0.1 &0.1 &0.2 \\\hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[h!]\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\hline
+\(l / \mathrm{cm}\) & 34.4&37.0& 39.5& 41.7& 44.4& 47.0&49.2&51.8&54.1&56.5  \\\hline
+\(K\)& 0.2&0.3 &0.4 &0.5 &0.6 &0.7 &0.8 &1.0 &1.0 &0.8 \\\hline
 \end{tabular}
 \end{table}
 Die Messwerte sind tatsächlich nur eine recht grobe Näherung. Als Unsicherheiten muss man etwa \(\Delta l \approx 0.1 \ \mathrm{cm}\) und \(\Delta K \approx 0.1\) annehmen. Ein genaueres Ergebnis erhält man, indem man das Interferenzmuster digital aufzeichnet und dann von einem geeigneten Programm die hellen und dunklen Pixel zählen lässt. Daraus ergäben sich dann minimale und maximale Intensitäten und somit der Kontrast. \\\\
-Ziel dieses ersten Teilversuches war die Bestimmung der Modenzahl des Lasers sowie der Kohärenzlänge - ein entscheidender Schritt für ein gutes Hologramm. Da das Laserspektrum - wie die Vorbetrachtung gezeigt hat - sehr sensitiv von der Anzahl der Lasermoden abhängt, genügt die einfache qualitative Untersuchung des Verlaufes der Kontrastfunktion um die Modenzahl zu bestimmen.
+Ziel dieses ersten Teilversuches war die Bestimmung der Modenzahl des Lasers sowie der Kohärenzlänge - ein entscheidender Schritt für ein gutes Hologramm. Da das Laserspektrum - wie die Vorbetrachtung gezeigt hat - sehr sensitiv von der Anzahl der Lasermoden abhängt, genügt die einfache qualitative Untersuchung des Verlaufes der Kontrastfunktion um die Modenzahl zu bestimmen. Der dem entsprechende Plot des Kontrastes in Abhängigkeit vom Armlängenunterschied $\Delta d = l - x_{1}$ (mit $x_{1} = 10 \, \text{cm}$) ist folgender:
+\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.4]{Kontrastschaetzung_Experiment.png}
+\caption{Schätzung der Kontrastfunktion, verglichen mit 3- und 4-Moden-Näherung} 
+\end{figure}
+\\\\
+Man sieht also, dass die Messwerte unter Berücksichtigung, dass die Messmethode eine Schätzung ist, gut mit der 4-Moden-Näherung übereinstimmen (Gewichtung der Moden 0.28 : 0.56 : 0.56 : 0.28).  Anhand des Minimums lässt sich außerdem die Kohärenzlänge ablesen. Für den 4-Moden-Laser wurde bereits im Abschnitt 2.3.3 das theoretische Ergebnis von $21.3$ cm bestimmt. Für die geschätzte Kohärenzfunktion liegt dieses eher bei $18.5$ cm. Schließlich sollte noch die Stabilität des Interferenzmusters untersucht werden. Dazu wurde durch äußere Störungen (Erschütterungen, z.B. durch Aufstampfen, Schranktür) eine Vibration angeregt. Dies bewirkte eine Schwingung des Interferenzmusters, welche nach ca. $3$s nicht mehr merklich beobachtbar war. Als Schlussfolgerung daraus kann man ziehen, dass bei der Aufnahme des Hologramms einige Sekunden gewartet werden muss, wenn äußere Störungen in Form von Erschütterungen auftreten, damit das Bild in der Rekonstruktion nicht merklich verschmiert erscheint.
+\\\\
+Nach Untersuchung der Stabilität des Interferenzbildes und Untersuchung des Lasers, wurde der Versuchsaufbau zur Aufzeichnung des Hologramms nach Denisjuk aufgebaut. Dieser ist in folgendem Bild zu sehen:
+\\\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.4]{denisjuk.png}
+\caption{Anordnung zur Aufzeichnung des Hologramms nach Denisjuk}
+\end{figure}
+\\\\
+Der hier eingetragene Raumfilter besteht aus einer Sammellinse ($f = 8$ mm) und einer Lochblende ($d=15$ $\mu$m). Durch diesen Aufbau können räumliche Intensitätsmodulationen ausgeblendet werden und nur das parallele Licht des Lasers kommt hindurch. Bei diesem Aufbau ist allerdings zu beachten, dass die Gelantine-Seite der Photoplatte zum Objekt zeigt und dabei etwas schräg zum einfallenden Licht platziert wird, damit das einfallende Licht bei der Rekonstruktion nicht direkt vom Beobachter aus einfallen muss. Als Objekte wurden 2 Schachfiguren (eine schwarz, eine weiß) gewählt.
+\\\\
+Vorerst wurde allerdings mit einem Messgerät die Intensität des Lichtes am Spiegel, also die Bestrahlungsstärke, gemessen.
+Diese Messung ergab unter normalen Raumbedingungen $I_{\mathrm{normal}} = 174.5 \frac{\mu W}{\mathrm{cm}^2}$.
+und unter Dunkelkammerbedingungen $I_{\mathrm{Dunkelkammer}} = 136.5 \frac{\mu W}{\mathrm{cm}^2}$.
+Dies ermöglichte dann die Berechnung der notwendigen Bestrahlungsdauer. Diese ergab sich aus einer Überlegung zur Beugungseffizienz. Diese erreicht nämlich ein Plateau ab einem Wert von $116 \, \frac{\mu J}{\mathrm{cm}^2}$. Somit ist die berechnete Zeit:
+\begin{align}
+t_{\mathrm{berechnet}} = \frac{116 \frac{\mu J}{\mathrm{cm}^2}}{I_{\mathrm{Dunkelkammer}}}
+\end{align}
+Es muss natürlich $I_{\mathrm{Dunkelkammer}}$ eingesetzt werden, da die Aufnahme des Hologramms auch unter Dunkelkammerbedingungen erfolgt. Um daraus die Belichtungszeit zu erhalten, muss nun noch folgender Schritt erfolgen:
+\begin{align}
+t_{\mathrm{Belichtung}} = \lceil{3 \, t_{\mathrm{berechnet}}} \rceil = 3s
+\end{align}
+Die berechnete Zeit wird also noch mit $3$ multipliziert und anschließend aufgerundet, da es besser ist das Hologramm ein wenig länger zu beleuchten, als zu kurz, vor allem da das gemessene $I_{\mathrm{Dunkelkammer}}$ nicht exakt ist, sondern etwas schwankt, was auch auf dem Messgerät zu sehen war.
+\\\\
+Der Strahlengang wurde also zuerst unterbrochen. Diese Unterbrechung wurde dann auf Kommando des Partners aufgehoben und für $3$s belichtet. Die belichtete Platte wurde dann vom Licht abgeschirmt kurzzeitig gelagert bis der Prozess der Entwicklung des Hologramms begann.
+\\\\
+Die Entwicklung erfolgte dann in folgenden Schritten:
+\begin{itemize}
+\item Entwickeln mit Entwickler CW-C2 ($2$ min.)
+\item Spülen mit deionisiertem Wasser ($1$ min.)
+\item Bleichen in Bleichbad PBU-Amidol ($3 \, \text{bis} \, 5$ min.)
+\item Spülen unter fließendem Wasser ($15$ min.)
+\item Hologramm in deionisiertes Wasser mit Netzmittel ($1$ min.)
+\item Trocknen (erst an Luft trocknen lassen, dann mit Föhn)
+\end{itemize}
+
+\section{Auswertung des Hologramms}
+Die so entstandenen Hologramme konnten also nun unter Lichteinstrahlung betrachtet werden. Dabei erfolgt die Lichteinstrahlung von der Beobachterseite. Deshalb wurde im Versuchsaufbau die Platte leicht schräg platziert, damit das Licht nicht direkt vom Beobachter aus auf das Hologramm fallen muss, dies hätte die Betrachtung sonst nämlich erschwert.
+\\\\
+Als Objekt wurde, wie bereits erwähnt, eine schwarze und eine weiße Schachfigur verwendet. Grund dafür war, dass sich lackiertes Holz aufgrund seiner Reflexionseigenschaften gut eignet und somit später als Hologramm gut sichtbar ist. Das vom Laser ausgesandte Licht war im roten Spektralbereich und da die weiße Figur dieses besser reflektiert als die schwarze, ist diese auch weitaus deutlicher in den Hologrammen zu erkennen. 
+\\\\
+Bei Bestrahlung mit polychromatischem Licht gilt die Bragg-Bedingung, da wir ein Volumenhologramm aufgenommen haben und deshalb die Bestrahlung mit Licht als Beugung an einer dreidimensionalen Struktur beschrieben werden kann:
+\begin{align}
+\label{bragg} 2\, d \cos(\alpha) = \lambda
+\end{align}
+Hierbei ist $d$ der Ebenenabstand, $\alpha$ der Einfallswinkel und $\lambda$ die Wellenlänge des einfallenden Lichtes. Wenn man den Betrachtungswinkel verändert, führt also eine andere Wellenlänge $\lambda$ zu konstruktiver Interferenz, die Farbe des Objekts ändert sich.
+\\\\
+Für die Bestrahlung mit quasi-monochromatischem Licht wurde das Verhalten des Hologramms bei erneuter Bestrahlung mit dem verwendeten Laserlicht untersucht. Dabei viel auf, dass das Objekt besser zu betrachten war, da der Anteil des zur Betrachtung benötigten roten Lichts größer ist als in weißem Licht. Wir haben also ein als konstant anzunehmendes $\lambda$ und wenn man den Betrachtungswinkel zu dem Winkel, unter dem das Hologramm aufgenommen wurde, ändert, sieht man das Objekt also nicht mehr, da nach Gleichung (\ref{bragg}) nur Interferenz für diesen einen Winkel $\alpha$ bei festem $\lambda$ erreicht werden kann.
+\\\\
+In diesem Versuch wurde zweimal das gleiche Objekt aufgenommen, allerdings wurde für das zweite Hologramm anscheinend eine zu kurze Belichtungszeit verwendet, sodass nur ein Teil der Figuren gut zu erkennen ist. Dies muss also der Teil der Platte sein, an dem die Bestrahlungsstärke des Lichtes am größten war, da dies eine kürzere Belichtungszeit für diese Stelle zur Folge hat. Die Abweichung von der berechneten Belichtungszeit ergibt sich natürlich darüber, dass man eine gewisse Verarbeitungszeit des Kommandos des Partners hat und die berechneten $3$s nur durch eigenes Zählen abgeschätzt wurden.
+\\\\
+Das Hologramm, indem das Objekt gut zu betrachten ist, ist zudem relativ scharf, sodass davon ausgegangen werden kann, dass äußere Einflüsse, wie Vibrationen und sonstige Erschütterungen während der Aufnahme des Hologramms erfolgreich vermieden werden konnten.
+
+
     % Bibliographie/Literaturverzeichnis
     \begin{thebibliography}{9}
     \bibitem{wiki:Intensität}
@@ -376,6 +471,10 @@ Ziel dieses ersten Teilversuches war die Bestimmung der Modenzahl des Lasers sow
     \emph{Intensität (Physik)},
     \url{https://de.wikipedia.org/wiki/Intensit%C3%A4t_(Physik)},
     25.\,Okt.~2019.
+    \bibitem{}
+    Kevin Krechan: Holographie - HO. Ausführliche Anleitung. 2019.
+
+
     \end{thebibliography}
 
 % Ende Dokument
